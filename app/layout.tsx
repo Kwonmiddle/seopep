@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "정책투표",
-  description: "주민이 직접 선택하는 정책공약 투표",
+  title: "서대문은평 주민광장",
+  description: "서대문은평 주민이 직접 만드는 10대 정책공약",
 };
 
 export default function RootLayout({
