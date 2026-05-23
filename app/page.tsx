@@ -11,25 +11,37 @@ export default function Home() {
         method="post"
         className="mx-auto max-w-[1152px] overflow-hidden rounded-3xl bg-[#fbfaff] shadow-[0_24px_80px_rgba(46,16,101,0.16)]"
       >
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#5b21b6] to-[#9f67ff] px-7 py-9 sm:px-8 md:px-9">
-          <div className="relative z-10 max-w-[560px]">
-            <p className="paper-regular mb-5 inline-flex rounded-full bg-white/95 px-4 py-2 text-[17px] text-[#4c1d95] shadow-sm">
+        <section className="relative flex min-h-svh items-center overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#5b21b6] to-[#9f67ff] px-7 py-20 pb-44 sm:px-10 md:px-14 lg:px-16">
+          <div className="absolute -right-24 top-16 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-[#c4b5fd]/25 blur-3xl" />
+
+          <div className="relative z-10 max-w-[900px]">
+            <p className="paper-regular mb-7 inline-flex rounded-full bg-white/95 px-5 py-2.5 text-[19px] text-[#4c1d95] shadow-sm">
               서대문은평 주민광장
             </p>
-            <h1 className="main-title max-w-[640px] text-[36px] leading-[0.95] tracking-[-0.07em] text-white sm:text-[52px] md:text-[60px]">
+            <h1 className="main-title max-w-[900px] text-[48px] leading-[0.92] tracking-[-0.08em] text-white sm:text-[70px] md:text-[86px] lg:text-[96px]">
               서대문은평 주민이 직접 만드는 10대 정책공약
             </h1>
-            <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[19px] font-semibold leading-9 text-white shadow-sm backdrop-blur">
+            <div className="mt-9 max-w-[760px] rounded-3xl border border-white/25 bg-white/15 px-6 py-6 text-[24px] font-semibold leading-9 text-white shadow-sm backdrop-blur sm:text-[28px] sm:leading-10">
               <p>2026 지방선거 주민들이 직접 정책공약을 결정한다!!</p>
               <p>주민들이 직접 10대 공약을 선정하여,</p>
               <p>
                 서대문은평 지방선거 후보들에게 전달하고 약속을 받겠습니다.
               </p>
             </div>
+            <a
+              href="#policy-section"
+              className="mt-10 inline-flex rounded-full border border-white/35 bg-white/15 px-5 py-3 text-[17px] font-black text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/25"
+            >
+              아래로 내려서 공약 선택하기
+            </a>
           </div>
         </section>
 
-        <section className="grid gap-6 px-6 py-7 md:px-8 xl:grid-cols-[1fr_290px]">
+        <section
+          id="policy-section"
+          className="scroll-mt-6 grid gap-6 px-6 py-7 md:px-8 xl:grid-cols-[1fr_290px]"
+        >
           <div>
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
