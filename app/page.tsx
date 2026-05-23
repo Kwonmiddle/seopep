@@ -105,9 +105,11 @@ export default function Home() {
             <div className="grid gap-7">
               {policyGroups.map((group) => (
                 <section key={group.title} className="grid gap-3">
-                  <h3 className="rounded-full bg-[#ede9fe] px-4 py-2 text-[18px] font-black text-[#4c1d95]">
-                    {group.title}
-                  </h3>
+                  {group.title !== "없음" ? (
+                    <h3 className="rounded-full bg-[#ede9fe] px-4 py-2 text-[18px] font-black text-[#4c1d95]">
+                      {group.title}
+                    </h3>
+                  ) : null}
                   <div className="grid gap-3">
                     {group.policyNumbers.map((policyNumber) => {
                       const policy = policies[policyNumber - 1];
@@ -148,6 +150,32 @@ export default function Home() {
                 className="w-full resize-none rounded-xl border border-[#d8b4fe] bg-white px-4 py-3 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
               />
             </label>
+
+            <div className="mt-5 rounded-2xl border border-[#d8b4fe] bg-[#f8f5ff] px-4 py-4">
+              <h3 className="text-[17px] font-black text-[#2f1b47]">
+                주민광장 소통방에 참여하기
+              </h3>
+              <p className="mt-1 text-[15px] font-medium leading-6 text-[#6d5f85]">
+                서대문은평 내란세력 청산, 너머. 주민들이 직접 참여하고
+                행동하며 정치하는 &lt;서대문은평 주민광장&gt;에 함께 해
+                주세요!
+              </p>
+
+              <label className="policy-card group relative mt-3 flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[16px] font-bold leading-6 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
+                <input
+                  className="peer sr-only"
+                  type="checkbox"
+                  name="talk"
+                  value="1"
+                />
+                <span className="policy-number mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[13px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                  ✓
+                </span>
+                <span className="policy-text peer-checked:text-[#4c1d95]">
+                  소통방 참여를 신청합니다
+                </span>
+              </label>
+            </div>
 
             <div className="mt-5 rounded-2xl border border-[#d8b4fe] bg-[#f8f5ff] px-4 py-4">
               <h3 className="text-[17px] font-black text-[#2f1b47]">

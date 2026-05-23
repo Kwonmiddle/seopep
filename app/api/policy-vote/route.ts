@@ -123,6 +123,7 @@ export async function POST(request: NextRequest) {
             getFormValue(formData, "phone"),
             getFormValue(formData, "address"),
             getFormValue(formData, "email"),
+            getFormValue(formData, "talk"),
             getFormValue(formData, "firstAssembly"),
             getFormValue(formData, "secondAssembly"),
             getFormValue(formData, "memo"),

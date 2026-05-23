@@ -9,6 +9,7 @@ type PolicyVoteDraft = {
   phone: string;
   address: string;
   email: string;
+  talk: boolean;
   firstAssembly: boolean;
   secondAssembly: boolean;
   memo: string;
@@ -31,6 +32,7 @@ function saveDraft(form: HTMLFormElement) {
     phone: String(formData.get("phone") ?? ""),
     address: String(formData.get("address") ?? ""),
     email: String(formData.get("email") ?? ""),
+    talk: formData.get("talk") === "1",
     firstAssembly: formData.get("firstAssembly") === "1",
     secondAssembly: formData.get("secondAssembly") === "1",
     memo: String(formData.get("memo") ?? ""),
@@ -74,12 +76,17 @@ function restoreDraft(form: HTMLFormElement) {
       }
     });
 
+    const talkInput = form.elements.namedItem("talk") as HTMLInputElement | null;
     const firstAssemblyInput = form.elements.namedItem(
       "firstAssembly",
     ) as HTMLInputElement | null;
     const secondAssemblyInput = form.elements.namedItem(
       "secondAssembly",
     ) as HTMLInputElement | null;
+
+    if (talkInput) {
+      talkInput.checked = Boolean(draft.talk);
+    }
 
     if (firstAssemblyInput) {
       firstAssemblyInput.checked = Boolean(draft.firstAssembly);
