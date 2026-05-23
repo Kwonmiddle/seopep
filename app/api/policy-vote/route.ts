@@ -35,7 +35,7 @@ function getFormValues(formData: FormData, name: string) {
 function getSheetRange(sheetName: string) {
   const escapedSheetName = sheetName.replaceAll("'", "''");
 
-  return `'${escapedSheetName}'!A:AC`;
+  return `'${escapedSheetName}'!A:AJ`;
 }
 
 export async function POST(request: NextRequest) {
