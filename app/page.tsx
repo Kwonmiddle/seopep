@@ -31,9 +31,23 @@ export default function Home() {
             </div>
             <a
               href="#policy-section"
-              className="mt-10 inline-flex rounded-full border border-white/35 bg-white/15 px-5 py-3 text-[17px] font-black text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/25"
+              aria-label="공약 선택 영역으로 이동"
+              className="mt-10 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/35 bg-white/15 text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/25"
             >
-              아래로 내려서 공약 선택하기
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-8 w-8"
+                fill="none"
+              >
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                />
+              </svg>
             </a>
           </div>
         </section>
