@@ -13,13 +13,13 @@ export default function Home() {
       >
         <section className="relative overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#5b21b6] to-[#9f67ff] px-7 py-9 sm:px-8 md:px-9">
           <div className="relative z-10 max-w-[560px]">
-            <p className="paper-regular mb-5 inline-flex rounded-full bg-white/95 px-4 py-2 text-[15px] text-[#4c1d95] shadow-sm">
+            <p className="paper-regular mb-5 inline-flex rounded-full bg-white/95 px-4 py-2 text-[17px] text-[#4c1d95] shadow-sm">
               서대문은평 주민광장
             </p>
-            <h1 className="main-title max-w-[640px] text-[34px] leading-[0.95] tracking-[-0.07em] text-white sm:text-[50px] md:text-[58px]">
+            <h1 className="main-title max-w-[640px] text-[36px] leading-[0.95] tracking-[-0.07em] text-white sm:text-[52px] md:text-[60px]">
               서대문은평 주민이 직접 만드는 10대 정책공약
             </h1>
-            <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[17px] font-semibold leading-8 text-white shadow-sm backdrop-blur">
+            <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[19px] font-semibold leading-9 text-white shadow-sm backdrop-blur">
               <p>2026 지방선거 주민들이 직접 정책공약을 결정한다!!</p>
               <p>주민들이 직접 10대 공약을 선정하여,</p>
               <p>
@@ -33,23 +33,23 @@ export default function Home() {
           <div>
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <h2 className="paper-regular text-2xl tracking-[-0.04em]">
+                <h2 className="paper-regular text-[26px] tracking-[-0.04em]">
                   정책공약 선택
                 </h2>
-                <p className="mt-2 text-[13px] font-medium text-[#6d5f85]">
+                <p className="mt-2 text-[15px] font-medium text-[#6d5f85]">
                   마음에 드는 항목을 여러 개 선택할 수 있습니다.
                 </p>
               </div>
-              <span className="shrink-0 rounded-full border border-[#c4b5fd] bg-[#ede9fe] px-3 py-1.5 text-[12px] font-black text-[#5b21b6]">
+              <span className="shrink-0 rounded-full border border-[#c4b5fd] bg-[#ede9fe] px-3 py-1.5 text-[14px] font-black text-[#5b21b6]">
                 중복 선택 가능
               </span>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3">
               {policies.map((policy, index) => (
                 <label
                   key={policy}
-                  className="policy-card group relative flex min-h-12 cursor-pointer items-center gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
+                  className="policy-card group relative flex min-h-14 cursor-pointer items-center gap-4 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-4 py-4 text-[19px] font-bold leading-7 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
                 >
                   <input
                     className="peer sr-only"
@@ -57,7 +57,7 @@ export default function Home() {
                     name="policies"
                     value={policy}
                   />
-                  <span className="policy-number flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                  <span className="policy-number flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[16px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
                     {index + 1}
                   </span>
                   <span className="policy-text peer-checked:text-[#4c1d95]">
@@ -68,34 +68,34 @@ export default function Home() {
             </div>
 
             <label className="mt-5 block">
-              <span className="mb-2 block text-[13px] font-black text-[#2f1b47]">
+              <span className="mb-2 block text-[15px] font-black text-[#2f1b47]">
                 기타 항목에 없는 정책공약이 필요하다면 직접 적어주세요.
               </span>
               <textarea
                 name="customPolicy"
                 rows={3}
                 placeholder="예: 우리 동네에 꼭 필요한 정책공약"
-                className="w-full resize-none rounded-xl border border-[#d8b4fe] bg-white px-4 py-3 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                className="w-full resize-none rounded-xl border border-[#d8b4fe] bg-white px-4 py-3 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
               />
             </label>
 
             <div className="mt-5 rounded-2xl border border-[#d8b4fe] bg-[#f8f5ff] px-4 py-4">
-              <h3 className="text-[15px] font-black text-[#2f1b47]">
+              <h3 className="text-[17px] font-black text-[#2f1b47]">
                 주민대회 참가 신청
               </h3>
-              <p className="mt-1 text-[13px] font-medium leading-5 text-[#6d5f85]">
+              <p className="mt-1 text-[15px] font-medium leading-6 text-[#6d5f85]">
                 참석 가능한 주민대회를 선택해주세요. 중복 선택 가능합니다.
               </p>
 
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
+                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[16px] font-bold leading-6 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
                   <input
                     className="peer sr-only"
                     type="checkbox"
                     name="firstAssembly"
                     value="1"
                   />
-                  <span className="policy-number mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                  <span className="policy-number mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[13px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
                     1
                   </span>
                   <span className="policy-text peer-checked:text-[#4c1d95]">
@@ -103,20 +103,20 @@ export default function Home() {
                       서대문은평 주민이 직접 만드는 10대 정책공약 결정
                       주민대회 1차
                     </span>
-                    <span className="mt-1 block text-[13px] font-semibold text-[#6d5f85]">
+                    <span className="mt-1 block text-[15px] font-semibold text-[#6d5f85]">
                       5월28일 저녁7시 · B플러스 북카페
                     </span>
                   </span>
                 </label>
 
-                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
+                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[16px] font-bold leading-6 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
                   <input
                     className="peer sr-only"
                     type="checkbox"
                     name="secondAssembly"
                     value="1"
                   />
-                  <span className="policy-number mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                  <span className="policy-number mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[13px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
                     2
                   </span>
                   <span className="policy-text peer-checked:text-[#4c1d95]">
@@ -124,7 +124,7 @@ export default function Home() {
                       서대문은평 주민이 직접 만드는 10대 정책공약 결정
                       주민대회 2차
                     </span>
-                    <span className="mt-1 block text-[13px] font-semibold text-[#6d5f85]">
+                    <span className="mt-1 block text-[15px] font-semibold text-[#6d5f85]">
                       5월31일 오후4시 · 추후공지
                     </span>
                   </span>
@@ -134,37 +134,37 @@ export default function Home() {
           </div>
 
           <aside className="h-fit rounded-2xl border border-[#d8b4fe] bg-white px-4 py-5 shadow-[0_16px_40px_rgba(76,29,149,0.08)]">
-            <h2 className="text-xl font-black tracking-[-0.04em]">추가 정보</h2>
-            <p className="mt-3 text-[13px] font-medium leading-5 text-[#6d5f85]">
+            <h2 className="text-[22px] font-black tracking-[-0.04em]">추가 정보</h2>
+            <p className="mt-3 text-[15px] font-medium leading-6 text-[#6d5f85]">
               어떤 공약이 10대 공약이 됐을까 궁금하다면, 주소와 이메일,
               비고도 함께 작성해주세요.
             </p>
 
             <div className="mt-5 grid gap-4">
               <label className="block">
-                <span className="mb-2 block text-[12px] font-black">주소(동까지)</span>
+                <span className="mb-2 block text-[14px] font-black">주소(동까지)</span>
                 <input
                   name="address"
                   placeholder="예: 남가좌동"
-                  className="h-11 w-full rounded-xl border border-[#ddd6fe] px-3 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                  className="h-11 w-full rounded-xl border border-[#ddd6fe] px-3 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-[12px] font-black">이메일</span>
+                <span className="mb-2 block text-[14px] font-black">이메일</span>
                 <input
                   name="email"
                   type="email"
                   placeholder="name@example.com"
-                  className="h-11 w-full rounded-xl border border-[#ddd6fe] px-3 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                  className="h-11 w-full rounded-xl border border-[#ddd6fe] px-3 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-[12px] font-black">비고란</span>
+                <span className="mb-2 block text-[14px] font-black">비고란</span>
                 <textarea
                   name="memo"
                   rows={4}
                   placeholder="현장 메모나 전달사항"
-                  className="w-full resize-none rounded-xl border border-[#ddd6fe] px-3 py-3 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                  className="w-full resize-none rounded-xl border border-[#ddd6fe] px-3 py-3 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
                 />
               </label>
             </div>
@@ -174,27 +174,27 @@ export default function Home() {
         <div className="fixed inset-x-0 bottom-0 z-20 border-t border-[#ddd6fe] bg-white/90 px-4 py-3 shadow-[0_-18px_40px_rgba(46,16,101,0.14)] backdrop-blur">
           <div className="mx-auto grid max-w-[1152px] gap-2 rounded-2xl bg-white sm:grid-cols-[1fr_1fr_360px]">
             <label className="block">
-              <span className="mb-1 block text-[12px] font-black text-[#5b21b6]">이름</span>
+              <span className="mb-1 block text-[14px] font-black text-[#5b21b6]">이름</span>
               <input
                 name="name"
                 placeholder="이름 입력"
                 required
-                className="h-11 w-full rounded-xl border border-[#ddd6fe] px-4 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                className="h-11 w-full rounded-xl border border-[#ddd6fe] px-4 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
               />
             </label>
             <label className="block">
-              <span className="mb-1 block text-[12px] font-black text-[#5b21b6]">연락처</span>
+              <span className="mb-1 block text-[14px] font-black text-[#5b21b6]">연락처</span>
               <input
                 name="phone"
                 placeholder="연락처 입력"
                 required
-                className="h-11 w-full rounded-xl border border-[#ddd6fe] px-4 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
+                className="h-11 w-full rounded-xl border border-[#ddd6fe] px-4 text-[17px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
               />
             </label>
             <button
               data-submit-button
               type="submit"
-              className="submit-button mt-auto h-11 rounded-xl bg-[#4c1d95] px-5 text-[14px] font-black text-white shadow-[0_8px_20px_rgba(76,29,149,0.28)] transition hover:bg-[#5b21b6]"
+              className="submit-button mt-auto h-11 rounded-xl bg-[#4c1d95] px-5 text-[16px] font-black text-white shadow-[0_8px_20px_rgba(76,29,149,0.28)] transition hover:bg-[#5b21b6]"
             >
               <span data-submit-label>선택한 공약 제안하기</span>
             </button>
