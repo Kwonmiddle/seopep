@@ -6,6 +6,7 @@ export default function Home() {
     <main className="min-h-svh bg-[#f4f0ff] px-4 py-5 pb-36 text-[#24123d] sm:px-6 lg:px-8">
       <SubmissionAlert />
       <form
+        data-policy-form
         action="/api/policy-vote"
         method="post"
         className="mx-auto max-w-[1152px] overflow-hidden rounded-3xl bg-[#fbfaff] shadow-[0_24px_80px_rgba(46,16,101,0.16)]"
@@ -48,7 +49,7 @@ export default function Home() {
               {policies.map((policy, index) => (
                 <label
                   key={policy}
-                  className="group flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[13px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
+                  className="policy-card group relative flex min-h-12 cursor-pointer items-center gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[13px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
                 >
                   <input
                     className="peer sr-only"
@@ -56,10 +57,12 @@ export default function Home() {
                     name="policies"
                     value={policy}
                   />
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                  <span className="policy-number flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
                     {index + 1}
                   </span>
-                  <span className="peer-checked:text-[#4c1d95]">{policy}</span>
+                  <span className="policy-text peer-checked:text-[#4c1d95]">
+                    {policy}
+                  </span>
                 </label>
               ))}
             </div>
@@ -136,10 +139,11 @@ export default function Home() {
               />
             </label>
             <button
+              data-submit-button
               type="submit"
-              className="mt-auto h-11 rounded-xl bg-[#4c1d95] px-5 text-[14px] font-black text-white shadow-[0_8px_20px_rgba(76,29,149,0.28)] transition hover:bg-[#5b21b6]"
+              className="submit-button mt-auto h-11 rounded-xl bg-[#4c1d95] px-5 text-[14px] font-black text-white shadow-[0_8px_20px_rgba(76,29,149,0.28)] transition hover:bg-[#5b21b6]"
             >
-              선택한 공약 제안하기
+              <span data-submit-label>선택한 공약 제안하기</span>
             </button>
           </div>
         </div>

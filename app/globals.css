@@ -45,3 +45,106 @@ body {
   font-family: "Paperozi", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
+
+.policy-card {
+  transform: translateZ(0);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.policy-card:active {
+  transform: scale(0.985);
+}
+
+.policy-card:has(input:checked) {
+  border-color: #6d28d9;
+  background: linear-gradient(135deg, #f7f2ff 0%, #ede9fe 100%);
+  box-shadow:
+    0 14px 30px rgba(109, 40, 217, 0.18),
+    inset 0 0 0 1px rgba(109, 40, 217, 0.16);
+  transform: translateY(-2px);
+}
+
+.policy-card:has(input:checked)::after {
+  content: "선택됨";
+  margin-left: auto;
+  border-radius: 999px;
+  background: #4c1d95;
+  color: #ffffff;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.policy-card:has(input:focus-visible) {
+  outline: 3px solid rgba(139, 92, 246, 0.35);
+  outline-offset: 2px;
+}
+
+.submit-button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  translate: -120% 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transition: translate 450ms ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(76, 29, 149, 0.34);
+}
+
+.submit-button:hover::before {
+  translate: 120% 0;
+}
+
+.submit-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 14px rgba(76, 29, 149, 0.28);
+}
+
+.submit-button[data-loading="true"] {
+  cursor: wait;
+  opacity: 0.88;
+  padding-right: 42px;
+}
+
+.submit-button[data-loading="true"]::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+  border-top-color: #ffffff;
+  border-radius: 999px;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
