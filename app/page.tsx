@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className="main-title max-w-[640px] text-[34px] leading-[0.95] tracking-[-0.07em] text-white sm:text-[50px] md:text-[58px]">
               서대문은평 주민이 직접 만드는 10대 정책공약
             </h1>
-            <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[14px] font-semibold leading-7 text-white shadow-sm backdrop-blur">
+            <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[17px] font-semibold leading-8 text-white shadow-sm backdrop-blur">
               <p>2026 지방선거 주민들이 직접 정책공약을 결정한다!!</p>
               <p>주민들이 직접 10대 공약을 선정하여,</p>
               <p>
@@ -49,7 +49,7 @@ export default function Home() {
               {policies.map((policy, index) => (
                 <label
                   key={policy}
-                  className="policy-card group relative flex min-h-12 cursor-pointer items-center gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[13px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
+                  className="policy-card group relative flex min-h-12 cursor-pointer items-center gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md"
                 >
                   <input
                     className="peer sr-only"
