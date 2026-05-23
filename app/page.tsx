@@ -1,8 +1,10 @@
 import { policies } from "@/lib/policies";
+import { SubmissionAlert } from "./submission-alert";
 
 export default function Home() {
   return (
     <main className="min-h-svh bg-[#f4f0ff] px-4 py-5 pb-36 text-[#24123d] sm:px-6 lg:px-8">
+      <SubmissionAlert />
       <form
         action="/api/policy-vote"
         method="post"
@@ -13,7 +15,7 @@ export default function Home() {
             <p className="mb-5 inline-flex rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-black text-[#4c1d95] shadow-sm">
               서대문은평 주민광장
             </p>
-            <h1 className="max-w-[640px] text-[34px] font-black leading-[0.95] tracking-[-0.07em] text-white sm:text-[50px] md:text-[58px]">
+            <h1 className="main-title max-w-[640px] text-[34px] leading-[0.95] tracking-[-0.07em] text-white sm:text-[50px] md:text-[58px]">
               서대문은평 주민이 직접 만드는 10대 정책공약
             </h1>
             <div className="mt-6 max-w-[520px] rounded-2xl border border-white/25 bg-white/15 px-5 py-4 text-[13px] font-semibold leading-7 text-white shadow-sm backdrop-blur">
@@ -23,13 +25,6 @@ export default function Home() {
                 서대문은평 지방선거 후보들에게 전달하고 약속을 받겠습니다.
               </p>
             </div>
-          </div>
-
-          <div
-            aria-hidden="true"
-            className="absolute right-20 top-24 hidden h-20 w-20 items-center justify-center rounded-2xl bg-white/10 text-6xl shadow-inner md:flex"
-          >
-            🐶
           </div>
         </section>
 

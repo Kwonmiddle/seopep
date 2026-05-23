@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     const selectedPolicies = getFormValues(formData, "policies");
     const selectedPolicySet = new Set(selectedPolicies);
     const policyColumns = policies.map((policy) =>
-      selectedPolicySet.has(policy) ? policy : "",
+      selectedPolicySet.has(policy) ? "1" : "",
     );
 
     await sheets.spreadsheets.values.append({
