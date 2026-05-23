@@ -78,6 +78,59 @@ export default function Home() {
                 className="w-full resize-none rounded-xl border border-[#d8b4fe] bg-white px-4 py-3 text-[15px] font-semibold outline-none placeholder:text-[#b9aec8] focus:border-[#6d28d9]"
               />
             </label>
+
+            <div className="mt-5 rounded-2xl border border-[#d8b4fe] bg-[#f8f5ff] px-4 py-4">
+              <h3 className="text-[15px] font-black text-[#2f1b47]">
+                주민대회 참가 신청
+              </h3>
+              <p className="mt-1 text-[13px] font-medium leading-5 text-[#6d5f85]">
+                참석 가능한 주민대회를 선택해주세요. 중복 선택 가능합니다.
+              </p>
+
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
+                  <input
+                    className="peer sr-only"
+                    type="checkbox"
+                    name="firstAssembly"
+                    value="1"
+                  />
+                  <span className="policy-number mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                    1
+                  </span>
+                  <span className="policy-text peer-checked:text-[#4c1d95]">
+                    <span className="block">
+                      서대문은평 주민이 직접 만드는 10대 정책공약 결정
+                      주민대회 1차
+                    </span>
+                    <span className="mt-1 block text-[13px] font-semibold text-[#6d5f85]">
+                      5월28일 저녁7시 · B플러스 북카페
+                    </span>
+                  </span>
+                </label>
+
+                <label className="policy-card group relative flex cursor-pointer items-start gap-3 overflow-hidden rounded-xl border border-[#d8b4fe] bg-white px-3 py-3 text-[14px] font-bold leading-5 text-[#2f1b47] transition hover:-translate-y-0.5 hover:border-[#8b5cf6] hover:shadow-md">
+                  <input
+                    className="peer sr-only"
+                    type="checkbox"
+                    name="secondAssembly"
+                    value="1"
+                  />
+                  <span className="policy-number mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#c4b5fd] bg-[#f3e8ff] text-[11px] font-black text-[#6d28d9] peer-checked:bg-[#4c1d95] peer-checked:text-white">
+                    2
+                  </span>
+                  <span className="policy-text peer-checked:text-[#4c1d95]">
+                    <span className="block">
+                      서대문은평 주민이 직접 만드는 10대 정책공약 결정
+                      주민대회 2차
+                    </span>
+                    <span className="mt-1 block text-[13px] font-semibold text-[#6d5f85]">
+                      5월31일 오후4시 · 추후공지
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
           </div>
 
           <aside className="h-fit rounded-2xl border border-[#d8b4fe] bg-white px-4 py-5 shadow-[0_16px_40px_rgba(76,29,149,0.08)]">
