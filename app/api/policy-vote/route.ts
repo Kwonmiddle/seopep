@@ -15,7 +15,16 @@ function getRequiredEnv(name: string) {
 }
 
 function normalizePrivateKey(privateKey: string) {
-  return privateKey.replace(/\\n/g, "\n");
+  let key = privateKey.trim();
+
+  if (
+    (key.startsWith('"') && key.endsWith('"')) ||
+    (key.startsWith("'") && key.endsWith("'"))
+  ) {
+    key = key.slice(1, -1);
+  }
+
+  return key.replace(/\\n/g, "\n");
 }
 
 function getFormValue(formData: FormData, name: string) {
@@ -35,7 +44,49 @@ function getFormValues(formData: FormData, name: string) {
 function getSheetRange(sheetName: string) {
   const escapedSheetName = sheetName.replaceAll("'", "''");
 
-  return `'${escapedSheetName}'!A:AI`;
+  return `'${escapedSheetName}'`;
+}
+
+function getErrorCode(error: unknown) {
+  const message =
+    error instanceof Error
+      ? error.message
+      : typeof error === "string"
+        ? error
+        : "unknown";
+
+  if (message.includes("is not configured")) {
+    return "config";
+  }
+
+  if (
+    message.includes("invalid_grant") ||
+    message.includes("DECODER") ||
+    message.includes("private key") ||
+    message.includes("No key or keyFile set")
+  ) {
+    return "auth";
+  }
+
+  if (
+    message.includes("Unable to parse range") ||
+    message.includes("not found") ||
+    message.includes("Requested entity was not found")
+  ) {
+    return "sheet";
+  }
+
+  if (message.includes("permission") || message.includes("PERMISSION_DENIED")) {
+    return "permission";
+  }
+
+  return "unknown";
+}
+
+function redirectWithError(request: NextRequest, code: string) {
+  return NextResponse.redirect(new URL(`/?error=submit&code=${code}`, request.url), {
+    status: 303,
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -46,11 +97,9 @@ export async function POST(request: NextRequest) {
     const spreadsheetId = getRequiredEnv("GOOGLE_SHEET_ID");
     const sheetName = process.env.GOOGLE_SHEET_TAB_NAME?.trim() || "Sheet1";
 
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: serviceAccountEmail,
-        private_key: privateKey,
-      },
+    const auth = new google.auth.JWT({
+      email: serviceAccountEmail,
+      key: privateKey,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
@@ -65,6 +114,7 @@ export async function POST(request: NextRequest) {
       spreadsheetId,
       range: getSheetRange(sheetName),
       valueInputOption: "USER_ENTERED",
+      insertDataOption: "INSERT_ROWS",
       requestBody: {
         values: [
           [
@@ -85,10 +135,9 @@ export async function POST(request: NextRequest) {
       status: 303,
     });
   } catch (error) {
-    console.error("Failed to submit policy vote", error);
+    const errorCode = getErrorCode(error);
+    console.error("Failed to submit policy vote", errorCode, error);
 
-    return NextResponse.redirect(new URL("/?error=submit", request.url), {
-      status: 303,
-    });
+    return redirectWithError(request, errorCode);
   }
 }

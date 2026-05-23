@@ -11,6 +11,25 @@ export function SubmissionAlert() {
       window.history.replaceState(null, "", url.pathname);
     }
 
+    if (url.searchParams.get("error") === "submit") {
+      const code = url.searchParams.get("code");
+      const errorMessages: Record<string, string> = {
+        config:
+          "서버 설정이 완료되지 않았습니다. Vercel 환경변수를 확인해주세요.",
+        auth: "구글 인증키 형식에 문제가 있습니다. GOOGLE_PRIVATE_KEY 값을 확인해주세요.",
+        sheet:
+          "구글 시트를 찾을 수 없습니다. GOOGLE_SHEET_ID와 GOOGLE_SHEET_TAB_NAME을 확인해주세요.",
+        permission:
+          "구글 시트 편집 권한이 없습니다. 서비스 계정 이메일에 편집자 권한을 부여해주세요.",
+      };
+
+      window.alert(
+        errorMessages[code ?? ""] ??
+          "제출 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.",
+      );
+      window.history.replaceState(null, "", url.pathname);
+    }
+
     const form = document.querySelector<HTMLFormElement>("[data-policy-form]");
     const nameInput = form?.elements.namedItem("name") as HTMLInputElement | null;
     const phoneInput = form?.elements.namedItem("phone") as HTMLInputElement | null;
