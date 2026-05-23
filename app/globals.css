@@ -2,6 +2,14 @@
 
 @font-face {
   font-family: "Paperozi";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Paperozi";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2")
     format("woff2");
   font-weight: 700;
@@ -31,4 +39,9 @@ body {
 .main-title {
   font-family: "Paperozi", Arial, Helvetica, sans-serif;
   font-weight: 700;
+}
+
+.paper-regular {
+  font-family: "Paperozi", Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
