@@ -35,7 +35,7 @@ function getFormValues(formData: FormData, name: string) {
 function getSheetRange(sheetName: string) {
   const escapedSheetName = sheetName.replaceAll("'", "''");
 
-  return `'${escapedSheetName}'!A:AJ`;
+  return `'${escapedSheetName}'!A:AI`;
 }
 
 export async function POST(request: NextRequest) {
@@ -75,7 +75,6 @@ export async function POST(request: NextRequest) {
             getFormValue(formData, "email"),
             getFormValue(formData, "memo"),
             ...policyColumns,
-            "",
             getFormValue(formData, "customPolicy"),
           ],
         ],
