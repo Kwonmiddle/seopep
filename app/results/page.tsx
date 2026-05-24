@@ -254,9 +254,6 @@ export default async function ResultsPage() {
                         <div className="min-w-0 flex-1">
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <p className="text-[18px] font-black leading-7 text-[#2f1b47]">
-                              <span className="mr-2 text-[#6d28d9]">
-                                #{item.policyNumber}
-                              </span>
                               {item.policy}
                             </p>
                             <p className="shrink-0 text-[18px] font-black text-[#4c1d95]">
@@ -295,7 +292,7 @@ export default async function ResultsPage() {
                         {index + 1}위
                       </span>
                       <span className="text-[16px] font-bold text-[#2f1b47]">
-                        #{item.policyNumber} {item.policy}
+                        {item.policy}
                       </span>
                       <span className="text-[16px] font-black text-[#4c1d95] md:text-right">
                         {item.count}표
