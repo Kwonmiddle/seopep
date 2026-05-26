@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { policies } from "@/lib/policies";
 import { SubmissionAlert } from "./submission-alert";
 
@@ -37,14 +36,6 @@ export default function Home() {
   return (
     <main className="min-h-svh bg-[#f4f0ff] px-4 py-5 pb-36 text-[#24123d] sm:px-6 lg:px-8">
       <SubmissionAlert />
-      <div className="fixed right-4 top-4 z-30 sm:right-6">
-        <Link
-          href="/results"
-          className="inline-flex rounded-full border border-white/70 bg-white/90 px-4 py-2 text-[13px] font-black text-[#4c1d95] shadow-[0_8px_22px_rgba(46,16,101,0.18)] backdrop-blur transition hover:-translate-y-0.5 hover:bg-white"
-        >
-          결과 보기
-        </Link>
-      </div>
       <form
         data-policy-form
         action="/api/policy-vote"
